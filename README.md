@@ -21,17 +21,17 @@ chmod +x Recon-NgBulkAppending
 **Requires:** [recon-ng](https://github.com/lanmaster53/recon-ng) (`recon-cli` on `PATH`).
 The workspace name `intel` is hardcoded; edit the script to target another one.
 
-### `dumb_automated_nmap+gobuster.bat`
+### `dumb_automated_nmap+gobuster.sh`
 
-Despite the `.bat` extension, this is a **bash** script. For each target in
-`domain_names` (one per line) it:
+For each target in `domain_names` (one per line) it:
 
 1. Runs `nmap -p- -T4 -vvv` and saves all output formats as `scan_<target>.*`
 2. Runs `gobuster dir` with redirects followed, status codes 401–405 excluded, and the
-   SecLists `raft-medium-words.txt` wordlist
+   SecLists `raft-medium-words.txt` wordlist, writing results to `<target>_go_bust.txt`
 
 ```bash
-bash "dumb_automated_nmap+gobuster.bat"
+chmod +x "dumb_automated_nmap+gobuster.sh"
+./"dumb_automated_nmap+gobuster.sh"
 ```
 
 **Requires:** `nmap`, `gobuster`, and SecLists at
@@ -45,7 +45,7 @@ full `-p-` scan is slow, so expect long runtimes on larger lists.
 | File             | Used by                            | Format          |
 |------------------|------------------------------------|-----------------|
 | `hostsfinal.txt` | `Recon-NgBulkAppending`            | one host per line |
-| `domain_names`   | `dumb_automated_nmap+gobuster.bat` | one domain per line |
+| `domain_names`   | `dumb_automated_nmap+gobuster.sh`  | one domain per line |
 
 Both are read from the current working directory and are not tracked in the repo.
 
