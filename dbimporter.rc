@@ -1,0 +1,4 @@
+db_import basicScan_*.xml
+db_import advancedScan_*.xml
+analyze
+exit
