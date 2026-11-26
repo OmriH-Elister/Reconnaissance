@@ -69,4 +69,5 @@ Both are read from the current working directory and are not tracked in the repo
 
 ## License
 
-No license file yet. See [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) for contribution conduct.
+This repository's original code and documentation are licensed under the
+[MIT License](LICENSE).
